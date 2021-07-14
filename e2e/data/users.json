@@ -1,0 +1,12 @@
+[
+    {
+        "firstName": "firstName",
+        "lastName": "lastName",
+        "userName": "userName",
+        "password": "password",
+        "customer": "AAA",
+        "role": "Customer",
+        "email": "someuser@useremail.com",
+        "phone": "823895890234"
+    }
+]
