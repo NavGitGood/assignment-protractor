@@ -7,7 +7,12 @@ const chaiAsPromised = require('chai-as-promised');
 const { 
     fillAddUserData,
     openAddUserDialog,
-    addUser
+    addUser,
+    saveButtonEnabled,
+    addFirstName,
+    addUserName,
+    addCellphone,
+    selectRole
     } = require("../page-objects/add-user");
 
 const {
@@ -59,6 +64,34 @@ Then(/the table should display "([^"]*)" row$/, {timeout: 5 * 1000}, async funct
     expect(await getRowCount()).to.equal(parseInt(rowCount));
 })
 
+Then(/save button should be disabled$/, {timeout: 5 * 1000}, async function () {
+    expect(await saveButtonEnabled()).to.be.false;
+})
+
+Then(/save button should be enabled$/, {timeout: 5 * 1000}, async function () {
+    expect(await saveButtonEnabled()).to.be.true;
+})
+
 When(/I delete the user "([^"]*)"$/, {timeout: 5 * 1000}, async function (firstName) {
     await deleteFirstRow();
+})
+
+When(/add data in FirstName$/, {timeout: 5 * 1000}, async function () {
+    const user = userData[0];
+    await addFirstName(user.firstName);
+})
+
+When(/add data in UserName$/, {timeout: 5 * 1000}, async function () {
+    const user = userData[0];
+    await addUserName(user.userName);
+})
+
+When(/add data in CellPhone$/, {timeout: 5 * 1000}, async function () {
+    const user = userData[0];
+    await addCellphone(user.phone);
+})
+
+When(/select a role$/, {timeout: 5 * 1000}, async function () {
+    const user = userData[0];
+    await selectRole(user.role);
 })

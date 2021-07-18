@@ -1,6 +1,6 @@
 Feature: Feature to test Webtable app
 
-   Scenario: Verify title
+  Scenario: Verify title
         Given I navigate to webtable app
         Then there should be a button add
         When Click on adduser
@@ -14,3 +14,10 @@ Feature: Feature to test Webtable app
       #   And search for user "firstName"
         Then the table should display "0" row
       #   And data should be present for user "firstName"
+
+
+  Scenario: Verify mandatory fields
+        Given I navigate to webtable app
+        Then there should be a button add
+        When Click on adduser
+        Then save button should be disabled
