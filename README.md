@@ -1,6 +1,6 @@
 # Assignment on Protractor Cucumber Framework #
 
-### How to use ###
+## How to use ##
 
 1. Extract the zip of clone from github
 2. In the root directory, run following commands (required only once):

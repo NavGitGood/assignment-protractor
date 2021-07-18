@@ -17,16 +17,32 @@ async function openAddUserDialog() {
     await addUserBtn.click();
 }
 
+async function saveButtonEnabled() {
+    return saveBtn.isEnabled();
+}
+
+async function addFirstName(data) {
+    await firstNameTxt.sendKeys(data);
+}
+
+async function addUserName(data) {
+    await userNameTxt.sendKeys(data);
+}
+
+async function addCellphone(data) {
+    await phoneTxt.sendKeys(data);
+}
+
 async function fillAddUserData(userData) {
-    await firstNameTxt.sendKeys(userData.firstName);
+    await addFirstName(userData.firstName);
     // browser.sleep(2000);
     await lastNameTxt.sendKeys(userData.lastName);
     // browser.sleep(2000);
-    await userNameTxt.sendKeys(userData.userName);
+    await addUserName(userData.userName);
     // browser.sleep(2000);
     await passwordTxt.sendKeys(userData.password);
     // browser.sleep(2000);
-    await phoneTxt.sendKeys(userData.phone);
+    await addCellphone(userData.phone);
     // browser.sleep(2000);
     await selectRole(userData.role);
     // browser.sleep(2000);
@@ -58,5 +74,10 @@ async function addUser() {
 module.exports = {
     openAddUserDialog,
     fillAddUserData,
-    addUser
+    addUser,
+    saveButtonEnabled,
+    addFirstName,
+    addUserName,
+    addCellphone,
+    selectRole
 }
