@@ -1,0 +1,10 @@
+{
+    "url": "http://www.way2automation.com/angularjs-protractor/webtables/",
+    "keysToDelete": [
+        "user",
+        "password",
+        "customer"
+    ],
+    "validEmail": "some@email.com",
+    "inValidEmail": "inValidEmail"
+}
