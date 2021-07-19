@@ -19,6 +19,23 @@ async function getTableRowByColumnValue(headerName, columnValue) {
     ).get(0);
 }
 
+async function getTableRowCountByColumnValue(headerName, columnValue) {
+    const index = await getColumnIdFromHeaderName(headerName);
+    return dataRow.filter(
+        row => row.$$("td").get(index).getText()
+            .then(innerText => innerText === columnValue)
+    ).count();
+}
+
+async function editARow(headerName, columnValue) {
+    const index = await getColumnIdFromHeaderName(headerName);
+    const rowToEdit = await dataRow.filter(
+        row => row.$$("td").get(index).getText()
+            .then(innerText => innerText === columnValue)
+    ).get(0);
+    await rowToEdit.$("button[type=edit]").click();
+}
+
 async function readARow(row) {
     return row.$$("td").map(async column => await column.getText())
 }
@@ -47,5 +64,7 @@ module.exports = {
     getDataForARow,
     searchUser,
     getRowCount,
-    deleteFirstRow
+    deleteFirstRow,
+    getTableRowCountByColumnValue,
+    editARow
 }

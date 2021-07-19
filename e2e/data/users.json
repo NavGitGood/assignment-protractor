@@ -1,12 +1,35 @@
 [
     {
-        "firstName": "firstName",
-        "lastName": "lastName",
-        "userName": "userName",
-        "password": "password",
+        "user": "user1",
+        "firstName": "user1_firstName",
+        "lastName": "user1_lastName",
+        "userName": "user1_userName",
+        "password": "user1_password",
         "customer": "AAA",
         "role": "Customer",
-        "email": "someuser@useremail.com",
-        "phone": "823895890234"
+        "email": "user1@useremail.com",
+        "phone": "12345"
+    },
+    {
+        "user": "user2",
+        "firstName": "user2_firstName",
+        "lastName": "user2_lastName",
+        "userName": "user2_userName",
+        "password": "user2_password",
+        "customer": "BBB",
+        "role": "Admin",
+        "email": "user2@useremail.com",
+        "phone": "123456"
+    },
+    {
+        "user": "user3",
+        "firstName": "user3_firstName",
+        "lastName": "user3_lastName",
+        "userName": "user3_userName",
+        "password": "user3_password",
+        "customer": "BBB",
+        "role": "Sales Team",
+        "email": "user3@useremail.com",
+        "phone": "1234567"
     }
 ]
