@@ -120,7 +120,8 @@ Then(/the user "([^"]*)" should not be present in the table/, {timeout: 5 * 1000
     expect(await getTableRowCountByColumnValue("First Name", userRecord.firstName)).to.equal(0);
 })
 
-When(/I edit the user "([^"]*)" with data for "([^"]*)"/, {timeout: 5 * 1000}, async function (user1, user2) {
+When(/I edit the user "([^"]*)" with data for "([^"]*)"/, {timeout: 10 * 1000}, async function (user1, user2) {
+    // await browser.sleep(5000);
     let userRecord = userData.filter(user => user.user === user1)[0];
     await editARow("First Name", userRecord.firstName);
     userRecord = userData.filter(user => user.user === user2)[0];
