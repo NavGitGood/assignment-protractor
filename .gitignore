@@ -102,4 +102,4 @@ dist
 
 # TernJS port file
 .tern-port
-# e2e/reports/**/*
+e2e/reports/**/*
